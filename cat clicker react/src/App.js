@@ -39,7 +39,7 @@ class App extends Component {
   componentWillMount() {
     this.setCurrentCat(this.state.allCats[0].name);
   }
-
+  //filter current cat from all cats 
   setCurrentCat = (selectedCatName) =>{
   	this.setState(state => ({
   	  currentCat: state.allCats.filter(cat => cat.name === selectedCatName)[0]
@@ -48,11 +48,11 @@ class App extends Component {
 
   incrementClicks = () =>{
     const {allCats, currentCat} = this.state;
-
+    // updating clicks count of clicked cat
   	this.setState(state => ({
   	  allCats: allCats.map(cat => cat.id === currentCat.id ? {...cat, clickCount: ++cat.clickCount}: cat), 
   	}));
-    
+    //updating the current cat to update the clicks count
     this.setCurrentCat(currentCat.name)
   }
 
