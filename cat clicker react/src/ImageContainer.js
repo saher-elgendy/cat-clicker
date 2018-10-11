@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 class ImageContainer extends Component {
 
   render() {
-    const {currentCat, cats, incrementClicks} = this.props
+    const {currentCat, cats, incrementClicks, setCurrentCat} = this.props
 
     return(
       <div className="img-container">

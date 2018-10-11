@@ -36,22 +36,31 @@ class App extends Component {
     currentCat: {}
   }
 
+  componentWillMount() {
+    this.setCurrentCat(this.state.allCats[0].name);
+  }
+
   setCurrentCat = (selectedCatName) =>{
   	this.setState(state => ({
   	  currentCat: state.allCats.filter(cat => cat.name === selectedCatName)[0]
-  	})) 
-  	console.log(this.state.currentCat)
+  	}));
   }
 
   incrementClicks = () =>{
-  	this.setState(currentCat => ({
-  	  currentCat: {...currentCat}
-  	}))
+    const {allCats, currentCat} = this.state;
+
+  	this.setState(state => ({
+  	  allCats: allCats.map(cat => cat.id === currentCat.id ? {...cat, clickCount: ++cat.clickCount}: cat), 
+  	}));
+    
+    this.setCurrentCat(currentCat.name)
   }
 
   render() {
   	const { allCats, currentCat } = this.state;
     console.log(currentCat)
+    console.log(allCats)
+    
     return(
       <div className="App">
         <ImageContainer 
