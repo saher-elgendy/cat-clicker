@@ -8,8 +8,8 @@ const CatChanger =  (props) => {
     <div className="cat-changer">
       <select onChange={(e) => {props.setCurrentCat(e.target.value)} }>    
 	      
-        {cats.map(cat => (
-          <option value={cat.name}>{cat.name}</option>
+        {cats.map((cat,i) => (
+          <option value={cat.name} key={i}>{cat.name}</option>
 	    ))}
       </select>
     </div>
