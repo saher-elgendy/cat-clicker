@@ -9,7 +9,7 @@ const ImageContainer  = props =>{
      <img 
        src={currentCat.src}
        className="cat-img"
-       onClick={() => IncrementClicks(currentCat.name)}
+       onClick={() => incrementClicks(currentCat.name)}
      />
      <div className="clicks-count">
        <p>{currentCat.clickCount} clicks</p>
@@ -28,7 +28,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-  	IncrementClicks: (name) => dispatch({
+  	incrementClicks: (name) => dispatch({
   	  type: 'INCREMENT',
       name
   	})
