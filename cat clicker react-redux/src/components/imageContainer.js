@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import cats from '../cats';
 import { connect } from 'react-redux';
 
 const ImageContainer  = props =>{
@@ -10,6 +9,7 @@ const ImageContainer  = props =>{
        src={currentCat.src}
        className="cat-img"
        onClick={() => incrementClicks(currentCat.name)}
+       alt='cat_img'
      />
      <div className="clicks-count">
        <p>{currentCat.clickCount} clicks</p>
