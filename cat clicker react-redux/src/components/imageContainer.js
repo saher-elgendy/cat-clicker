@@ -2,22 +2,21 @@ import React, { Component } from 'react';
 import cats from '../cats';
 import { connect } from 'react-redux';
 
-class ImageContainer extends Component {
-	render(){
-	console.log(this.props.cats)
+const ImageContainer  = props =>{
+  const {currentCat, incrementClicks} = props;
   return(
    <div className="img-cont">
      <img 
-       src={this.props.currentCat.src}
+       src={currentCat.src}
        className="cat-img"
-       onClick={() => this.props.IncrementClicks(this.props.currentCat.name)}
+       onClick={() => IncrementClicks(currentCat.name)}
      />
      <div className="clicks-count">
-       <p>{this.props.currentCat.clickCount} clicks</p>
+       <p>{currentCat.clickCount} clicks</p>
      </div>
    </div>
   );
-}
+
 }
 
 const mapStateToProps = (state) => {
