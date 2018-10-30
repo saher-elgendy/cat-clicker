@@ -1,19 +1,31 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import cats from '../cats'
 
 const ImageContainer  = props =>{
-  const {currentCat, incrementClicks} = props;
+  const {cats, currentCat, incrementClicks} = props;
+
+  const getCurrentCat = (name) => {
+    return cats.filter(cat => cat.name === name)[0];
+  };
+
+  const showingCat = getCurrentCat(currentCat);
+ 
   return(
    <div className="img-cont">
+     <div className="cat-name">
+       <p>{showingCat.name}</p>
+     </div>
      <img 
-       src={currentCat.src}
+       src={ showingCat.src }
        className="cat-img"
-       onClick={() => incrementClicks(currentCat.name)}
+       onClick={() => incrementClicks(currentCat)}
        alt='cat_img'
      />
      <div className="clicks-count">
-       <p>{currentCat.clickCount} clicks</p>
+       <p>{showingCat.clickCount} clicks</p>
      </div>
+
    </div>
   );
 
