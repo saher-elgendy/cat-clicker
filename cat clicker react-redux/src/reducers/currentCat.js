@@ -1,9 +1,10 @@
 import cats from '../cats'
 
-export default (state = cats[0], action) => {
+const defaultState = cats[0].name;
+export default (state = defaultState, action) => {
   switch(action.type) {
   	case 'SET_CURRENT_CAT':
-  	  return cats.filter(cat => cat.name === action.name)[0];
+      return action.name
   	default: 
   	  return state;
   }
