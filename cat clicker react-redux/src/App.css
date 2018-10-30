@@ -3,9 +3,21 @@
   text-align: center;
 }
 
+
+.img-cont {
+  width: 60%;
+  height: 70vh;
+  margin: auto;
+}
 .cat-img {
-	width: 600px;
-	height: 500px;
-	max-width: 600px;
-	max-height: 500px;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.cat-name {
+  text-align: center;
+  background: yellow;
+  width: 100%;
+  margin: auto;
 }
